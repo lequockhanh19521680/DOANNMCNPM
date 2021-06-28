@@ -17,32 +17,32 @@ namespace DoAn_2.MenuTab
     {
         SqlConnection connect = ClassKetnoi.connect;
         //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-A0E9NLI\MSSQLSERVER2019;Initial Catalog=doan-3;Integrated Security=True");
-        SqlCommand cmd = new SqlCommand();
-        SqlDataReader rdr;
-        private Form currentchildform;
-        string CurrentMonth = DateTime.Now.ToString("MM");
+        SqlCommand cMD = new SqlCommand();
+        SqlDataReader rDR;
+        private Form currentChildForm;
+        string currentMonth = DateTime.Now.ToString("MM");
         public Dashboard()
         {
             InitializeComponent();
         }
-        private void motrangcon(Form trangcon)
+        private void MoTrangCon(Form trangCon)
         {
-            if (currentchildform != null)
+            if (currentChildForm != null)
             {
-                currentchildform.Close();
+                currentChildForm.Close();
 
             }
-            currentchildform = trangcon;
-            trangcon.TopLevel = false;
-            trangcon.FormBorderStyle = FormBorderStyle.None;
-            trangcon.Dock = DockStyle.Fill;
-            PanelChart.Controls.Add(trangcon);
-            PanelChart.Tag = trangcon;
-            trangcon.BringToFront();
-            trangcon.Show();
+            currentChildForm = trangCon;
+            trangCon.TopLevel = false;
+            trangCon.FormBorderStyle = FormBorderStyle.None;
+            trangCon.Dock = DockStyle.Fill;
+            PanelChart.Controls.Add(trangCon);
+            PanelChart.Tag = trangCon;
+            trangCon.BringToFront();
+            trangCon.Show();
 
         }
-        private void doanhsobanhang()
+        private void DoanhSoBanHang()
         {
             
          //   MessageBox.Show(CurrentMonth);
@@ -50,11 +50,11 @@ namespace DoAn_2.MenuTab
             {
                 connect.Open();
                 // SqlCommand cmdCountTongHD = new SqlCommand("select COUNT(IDhoadon) from HoaDon", connect);
-                SqlCommand cmdCountTongHDThangNay = new SqlCommand("SELECT count( MONTH([HDtime])) as HDtimene from HoaDon where MONTH(HDtime) = '" + CurrentMonth + "'  ", connect);
+                SqlCommand cmdCountTongHDThangNay = new SqlCommand("SELECT count( MONTH([HDtime])) as HDtimene from HoaDon where MONTH(HDtime) = '" + currentMonth + "'  ", connect);
                 SqlCommand cmdCountHDToday = new SqlCommand("select count(IDhoadon) from HoaDon where cast ([HDtime] as date) = cast(getdate() as date)", connect);
-                SqlCommand cmdCountTongTienThangNay = new SqlCommand("select sum(HDthanhtoan) from HoaDon where MONTH(HDtime) = '" + CurrentMonth + "'  ", connect);
+                SqlCommand cmdCountTongTienThangNay = new SqlCommand("select sum(HDthanhtoan) from HoaDon where MONTH(HDtime) = '" + currentMonth + "'  ", connect);
                 SqlCommand cmdCountTienToday = new SqlCommand("select sum(HDthanhtoan) from HoaDon where cast ([HDtime] as date) = cast(getdate() as date)", connect);
-                SqlCommand cmdCountDistinctMasp = new SqlCommand("SELECT COUNT(DISTINCT value) FROM HoaDon CROSS APPLY STRING_SPLIT(HDmasp, ',') where MONTH(HDtime) = '" + CurrentMonth + "' ", connect);
+                SqlCommand cmdCountDistinctMasp = new SqlCommand("SELECT COUNT(DISTINCT value) FROM HoaDon CROSS APPLY STRING_SPLIT(HDmasp, ',') where MONTH(HDtime) = '" + currentMonth + "' ", connect);
                 SqlCommand cmdCountDistinctMaspToday = new SqlCommand("SELECT COUNT(DISTINCT value) FROM HoaDon CROSS APPLY STRING_SPLIT(HDmasp, ',') where cast([HDtime] as date) = cast(getdate() as date) ", connect);
 
                 int CountTongHD = Convert.ToInt32(cmdCountTongHDThangNay.ExecuteScalar());
@@ -93,7 +93,7 @@ namespace DoAn_2.MenuTab
 
 
 
-        private void tongslsptrongkho()
+        private void TongSLSPTrongKho()
         {
             try
             {
@@ -111,7 +111,7 @@ namespace DoAn_2.MenuTab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void loaisptrongkho()
+        private void LoaiSPTrongKho()
         {
             try
             {
@@ -126,12 +126,12 @@ namespace DoAn_2.MenuTab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void khachno()
+        private void KhachNo()
         {
             try
             {
                 connect.Open();
-                SqlCommand cmdSumKhachNoThang = new SqlCommand("select sum(HDno) from HoaDon where MONTH(HDtime) = '"+ CurrentMonth + "' ", connect);
+                SqlCommand cmdSumKhachNoThang = new SqlCommand("select sum(HDno) from HoaDon where MONTH(HDtime) = '"+ currentMonth + "' ", connect);
                 SqlCommand cmdKhachNoToday = new SqlCommand("select sum(HDno) from HoaDon where cast ([HDtime] as date) = cast(getdate() as date)", connect);
 
                 int SumKhachNoThang = Convert.ToInt32(cmdSumKhachNoThang.ExecuteScalar());
@@ -154,11 +154,11 @@ namespace DoAn_2.MenuTab
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            motrangcon(new ChartMoney());
-            doanhsobanhang();
-            tongslsptrongkho();
-            loaisptrongkho();
-            khachno();
+            MoTrangCon(new ChartMoney());
+            DoanhSoBanHang();
+            TongSLSPTrongKho();
+            LoaiSPTrongKho();
+            KhachNo();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -173,18 +173,18 @@ namespace DoAn_2.MenuTab
 
         private void button1_Click(object sender, EventArgs e)
         {
-             motrangcon(new ChartMoney());
+             MoTrangCon(new ChartMoney());
            
         }
 
         private void btnChartSL_Click(object sender, EventArgs e)
         {
-            motrangcon(new ChartSLSP());
+            MoTrangCon(new ChartSLSP());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            motrangcon(new ChartSPHet());
+            MoTrangCon(new ChartSPHet());
         }
     }
 }

@@ -241,3 +241,35 @@ D:\VisualCode\Đồ án LTTQ\Đồ án LTTQ\Project File\DoAn-2\DoAn-2\obj\Debug
 D:\VisualCode\Đồ án LTTQ\Đồ án LTTQ\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csproj.CopyComplete
 D:\VisualCode\Đồ án LTTQ\Đồ án LTTQ\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.exe
 D:\VisualCode\Đồ án LTTQ\Đồ án LTTQ\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.pdb
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\DoAn-2.exe.config
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\DoAn-2.exe
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\DoAn-2.pdb
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\FontAwesome.Sharp.dll
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csprojAssemblyReference.cache
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csproj.ResolveComReference.cache
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.Form1.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.FormLoading.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MainControl.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.BanHang.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.BanHangTT.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.ChartMoney.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.ChartSLSP.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.ChartSPHet.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.Dashboard.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.DonHang.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.DonViSP.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.HoaDonChiTiet.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.LoaiSP.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.Setting.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.TonKho.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.MenuTab.SanPham.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn_2.Properties.Resources.resources
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csproj.GenerateResource.cache
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csproj.CoreCompileInputs.cache
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.csproj.CopyComplete
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.exe
+D:\NMCNMP\DOAN\DOANNMCNPM\Project File\DoAn-2\DoAn-2\obj\Debug\DoAn-2.pdb
