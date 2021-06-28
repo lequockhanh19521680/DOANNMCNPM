@@ -32,12 +32,12 @@ namespace DoAn_2.MenuTab
             SqlDataAdapter adapt = new SqlDataAdapter("select tensp as Ten,soluongsp as SL from tonkho where  soluongsp <= 30", connect);
 
             adapt.Fill(ds);
-            chart1.DataSource = ds;
+            Chart1.DataSource = ds;
             //set the member of the chart data source used to data bind to the X-values of the series  
-            chart1.Series["Series1"].XValueMember = "Ten";
+            Chart1.Series["Series1"].XValueMember = "Ten";
             //set the member columns of the chart data source used to data bind to the X-values of the series  
-            chart1.Series["Series1"].YValueMembers = "SL";
-            chart1.Series["Series1"].IsValueShownAsLabel = true;
+            Chart1.Series["Series1"].YValueMembers = "SL";
+            Chart1.Series["Series1"].IsValueShownAsLabel = true;
             //ChartSlspDayByDay.Titles.Add("Salary Chart");
             connect.Close();
         }

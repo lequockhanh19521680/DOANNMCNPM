@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtid = new System.Windows.Forms.TextBox();
-            this.txttensp = new System.Windows.Forms.TextBox();
-            this.txtsl = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtTensp = new System.Windows.Forms.TextBox();
+            this.txtSl = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtgiaban = new System.Windows.Forms.TextBox();
-            this.txtgianhap = new System.Windows.Forms.TextBox();
+            this.txtGiaban = new System.Windows.Forms.TextBox();
+            this.txtGianhap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btndelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDeleteIMG = new FontAwesome.Sharp.IconButton();
             this.btnButtonChooseIMG = new FontAwesome.Sharp.IconButton();
-            this.txtsearch = new System.Windows.Forms.TextBox();
-            this.comboloai = new System.Windows.Forms.ComboBox();
-            this.combodonvi = new System.Windows.Forms.ComboBox();
-            this.btnclear = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.comboLoai = new System.Windows.Forms.ComboBox();
+            this.comboDonvi = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.LabelSearch = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtGiamGia = new System.Windows.Forms.TextBox();
@@ -75,24 +75,24 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(114, 12);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(180, 20);
-            this.txtid.TabIndex = 1;
+            this.txtId.Location = new System.Drawing.Point(114, 12);
+            this.txtId.Name = "txtid";
+            this.txtId.Size = new System.Drawing.Size(180, 20);
+            this.txtId.TabIndex = 1;
             // 
             // txttensp
             // 
-            this.txttensp.Location = new System.Drawing.Point(114, 39);
-            this.txttensp.Name = "txttensp";
-            this.txttensp.Size = new System.Drawing.Size(180, 20);
-            this.txttensp.TabIndex = 2;
+            this.txtTensp.Location = new System.Drawing.Point(114, 39);
+            this.txtTensp.Name = "txttensp";
+            this.txtTensp.Size = new System.Drawing.Size(180, 20);
+            this.txtTensp.TabIndex = 2;
             // 
             // txtsl
             // 
-            this.txtsl.Location = new System.Drawing.Point(114, 67);
-            this.txtsl.Name = "txtsl";
-            this.txtsl.Size = new System.Drawing.Size(180, 20);
-            this.txtsl.TabIndex = 3;
+            this.txtSl.Location = new System.Drawing.Point(114, 67);
+            this.txtSl.Name = "txtsl";
+            this.txtSl.Size = new System.Drawing.Size(180, 20);
+            this.txtSl.TabIndex = 3;
             // 
             // label1
             // 
@@ -156,17 +156,17 @@
             // 
             // txtgiaban
             // 
-            this.txtgiaban.Location = new System.Drawing.Point(114, 120);
-            this.txtgiaban.Name = "txtgiaban";
-            this.txtgiaban.Size = new System.Drawing.Size(180, 20);
-            this.txtgiaban.TabIndex = 12;
+            this.txtGiaban.Location = new System.Drawing.Point(114, 120);
+            this.txtGiaban.Name = "txtgiaban";
+            this.txtGiaban.Size = new System.Drawing.Size(180, 20);
+            this.txtGiaban.TabIndex = 12;
             // 
             // txtgianhap
             // 
-            this.txtgianhap.Location = new System.Drawing.Point(114, 93);
-            this.txtgianhap.Name = "txtgianhap";
-            this.txtgianhap.Size = new System.Drawing.Size(180, 20);
-            this.txtgianhap.TabIndex = 11;
+            this.txtGianhap.Location = new System.Drawing.Point(114, 93);
+            this.txtGianhap.Name = "txtgianhap";
+            this.txtGianhap.Size = new System.Drawing.Size(180, 20);
+            this.txtGianhap.TabIndex = 11;
             // 
             // label7
             // 
@@ -180,23 +180,23 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(17, 243);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(60, 40);
-            this.btnsave.TabIndex = 20;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = true;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            this.btnSave.Location = new System.Drawing.Point(17, 243);
+            this.btnSave.Name = "btnsave";
+            this.btnSave.Size = new System.Drawing.Size(60, 40);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(124, 243);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(57, 40);
-            this.btndelete.TabIndex = 21;
-            this.btndelete.Text = "Delete";
-            this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            this.btnDelete.Location = new System.Drawing.Point(124, 243);
+            this.btnDelete.Name = "btndelete";
+            this.btnDelete.Size = new System.Drawing.Size(57, 40);
+            this.btnDelete.TabIndex = 21;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // pictureBox1
             // 
@@ -240,51 +240,51 @@
             // 
             // txtsearch
             // 
-            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsearch.Location = new System.Drawing.Point(309, 58);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(196, 20);
-            this.txtsearch.TabIndex = 25;
-            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(309, 58);
+            this.txtSearch.Name = "txtsearch";
+            this.txtSearch.Size = new System.Drawing.Size(196, 20);
+            this.txtSearch.TabIndex = 25;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // comboloai
             // 
-            this.comboloai.FormattingEnabled = true;
-            this.comboloai.Items.AddRange(new object[] {
+            this.comboLoai.FormattingEnabled = true;
+            this.comboLoai.Items.AddRange(new object[] {
             "Nước ngọt",
             "Bánh",
             "Mì",
             "Nước suối",
             "Xúc xích"});
-            this.comboloai.Location = new System.Drawing.Point(114, 147);
-            this.comboloai.Name = "comboloai";
-            this.comboloai.Size = new System.Drawing.Size(180, 21);
-            this.comboloai.TabIndex = 27;
-            this.comboloai.SelectedIndexChanged += new System.EventHandler(this.comboloai_SelectedIndexChanged);
+            this.comboLoai.Location = new System.Drawing.Point(114, 147);
+            this.comboLoai.Name = "comboloai";
+            this.comboLoai.Size = new System.Drawing.Size(180, 21);
+            this.comboLoai.TabIndex = 27;
+            this.comboLoai.SelectedIndexChanged += new System.EventHandler(this.comboloai_SelectedIndexChanged);
             // 
             // combodonvi
             // 
-            this.combodonvi.FormattingEnabled = true;
-            this.combodonvi.Items.AddRange(new object[] {
+            this.comboDonvi.FormattingEnabled = true;
+            this.comboDonvi.Items.AddRange(new object[] {
             "Chai",
             "Lon",
             "Gói",
             "Hộp",
             "Thùng"});
-            this.combodonvi.Location = new System.Drawing.Point(114, 178);
-            this.combodonvi.Name = "combodonvi";
-            this.combodonvi.Size = new System.Drawing.Size(180, 21);
-            this.combodonvi.TabIndex = 28;
+            this.comboDonvi.Location = new System.Drawing.Point(114, 178);
+            this.comboDonvi.Name = "combodonvi";
+            this.comboDonvi.Size = new System.Drawing.Size(180, 21);
+            this.comboDonvi.TabIndex = 28;
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(237, 243);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(57, 40);
-            this.btnclear.TabIndex = 29;
-            this.btnclear.Text = "Clear";
-            this.btnclear.UseVisualStyleBackColor = true;
-            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
+            this.btnClear.Location = new System.Drawing.Point(237, 243);
+            this.btnClear.Name = "btnclear";
+            this.btnClear.Size = new System.Drawing.Size(57, 40);
+            this.btnClear.TabIndex = 29;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // LabelSearch
             // 
@@ -339,27 +339,27 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtGiamGia);
             this.Controls.Add(this.LabelSearch);
-            this.Controls.Add(this.btnclear);
-            this.Controls.Add(this.combodonvi);
-            this.Controls.Add(this.comboloai);
-            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.comboDonvi);
+            this.Controls.Add(this.comboLoai);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnButtonChooseIMG);
             this.Controls.Add(this.btnDeleteIMG);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btndelete);
-            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtgiaban);
-            this.Controls.Add(this.txtgianhap);
+            this.Controls.Add(this.txtGiaban);
+            this.Controls.Add(this.txtGianhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtsl);
-            this.Controls.Add(this.txttensp);
-            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.txtSl);
+            this.Controls.Add(this.txtTensp);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.dataGridView1);
             this.Name = "tonkho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -375,27 +375,27 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.TextBox txttensp;
-        private System.Windows.Forms.TextBox txtsl;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtTensp;
+        private System.Windows.Forms.TextBox txtSl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtgiaban;
-        private System.Windows.Forms.TextBox txtgianhap;
+        private System.Windows.Forms.TextBox txtGiaban;
+        private System.Windows.Forms.TextBox txtGianhap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnDeleteIMG;
         private FontAwesome.Sharp.IconButton btnButtonChooseIMG;
-        private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox comboloai;
-        private System.Windows.Forms.ComboBox combodonvi;
-        private System.Windows.Forms.Button btnclear;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox comboLoai;
+        private System.Windows.Forms.ComboBox comboDonvi;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label LabelSearch;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtGiamGia;
