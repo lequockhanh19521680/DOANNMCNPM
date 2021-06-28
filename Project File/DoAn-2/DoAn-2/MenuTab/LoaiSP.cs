@@ -21,7 +21,7 @@ namespace DoAn_2.MenuTab
             InitializeComponent();
 
         }
-        private void autoidSPLoai()
+        private void autoIDSPLoai()
         {
             connect.Open();
             SqlCommand cmd = new SqlCommand("select count(IDloai) from loaisp", connect);
@@ -30,12 +30,12 @@ namespace DoAn_2.MenuTab
             textBoxID.Text = i.ToString();
             connect.Close();
         }
-        private void clear()
+        private void Clear()
         {
             textBoxTenLoai.Clear();
             textBoxID.Clear();
         }
-        private void gridviewsploai()
+        private void GridViewSPLoai()
         {
             connect.Open();
             string querysploai = @"select IDloai as 'Mã loại', TenLoai as 'Tên loại' from loaisp";
@@ -47,15 +47,15 @@ namespace DoAn_2.MenuTab
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            clear();
-            autoidSPLoai();
+            Clear();
+            autoIDSPLoai();
         }
 
         private void dataGridViewLoaiSP_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewLoaiSPloai.CurrentRow.Index != -1)
             {
-                clear();
+                Clear();
                 textBoxID.Text = dataGridViewLoaiSPloai.CurrentRow.Cells[0].Value.ToString();
                 textBoxTenLoai.Text = dataGridViewLoaiSPloai.CurrentRow.Cells[1].Value.ToString();
                 // lam toi day roi ne
@@ -83,7 +83,7 @@ namespace DoAn_2.MenuTab
                         {
                             MessageBox.Show("Đã lựu");
                             connect.Close();
-                            gridviewsploai();
+                            GridViewSPLoai();
                         }
                         else
                         {
@@ -99,8 +99,8 @@ namespace DoAn_2.MenuTab
                     MessageBox.Show("Error during update: " + ex.Message);
                 }
             }
-            clear();
-            autoidSPLoai();
+            Clear();
+            autoIDSPLoai();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -124,8 +124,8 @@ namespace DoAn_2.MenuTab
                         {
                             MessageBox.Show("Đã xóa");
                             connect.Close();
-                            clear();
-                            gridviewsploai();
+                            Clear();
+                            GridViewSPLoai();
                             
                         }
                         else
@@ -142,8 +142,8 @@ namespace DoAn_2.MenuTab
                 }
 
             }
-            clear();
-            autoidSPLoai(); 
+            Clear();
+            autoIDSPLoai(); 
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -166,8 +166,8 @@ namespace DoAn_2.MenuTab
                     {
                         MessageBox.Show("Đã thêm");
                         connect.Close();
-                        clear();
-                        gridviewsploai();
+                        Clear();
+                        GridViewSPLoai();
                     }
                     else
                     {
@@ -178,14 +178,14 @@ namespace DoAn_2.MenuTab
 
                 }
             }
-            autoidSPLoai();
+            autoIDSPLoai();
         }
 
 
         private void LoaiSP_Load(object sender, EventArgs e)
         {
-            autoidSPLoai();
-            gridviewsploai();
+            autoIDSPLoai();
+            GridViewSPLoai();
         }
     }
 }

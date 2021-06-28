@@ -15,33 +15,33 @@ namespace DoAn_2.MenuTab
     {
         SqlConnection connect = ClassKetnoi.connect;
         //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-A0E9NLI\MSSQLSERVER2019;Initial Catalog=doan-3;Integrated Security=True");
-        public static string hdid = "";
-        public static string hdmasp = "";
-        public static string hdtensp = "";
-        public static string hdsl = "";
-        public static string hddongia = "";
-        public static string hdloai = "";
-        public static string hddonvi = "";
-        public static string hdthanhtoan = "";
-        public static string sdt = "";
-        public static string tenkh = "";
-        public static string hdtime = "";
-        public static string hdno = "";
-        public static string nvtt = "";
+        public static string hdID = "";
+        public static string hdMaSP = "";
+        public static string hdTenSP = "";
+        public static string hdSL = "";
+        public static string hdDonGia = "";
+        public static string hdLoai = "";
+        public static string hdDonVi = "";
+        public static string hdThanhToan = "";
+        public static string sDT = "";
+        public static string tenKH= "";
+        public static string hdTime = "";
+        public static string hdNo = "";
+        public static string nvTT = "";
 
         public DonHang()
         {
             InitializeComponent();
-            gridviewsp();
+            GridViewSP();
        //     dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
         }
-        public void gridviewsp()
+        public void GridViewSP()
         {
-            string querysp = @"select IDhoadon as 'Mã hóa đơn',HDmasp as 'Mã sản phẩm' , HDtensp as 'Tên sản phẩm', TenKH as 'Tên KH', HDsl as 'Số lượng',HDdongia as 'Đơn giá' ,HDthanhtoan as 'Thanh toán',HDtime as 'Thời gian', HDloai as 'Loại', HDdonvi as 'Đơn vị',SDT as 'SĐT',HDno as 'Nợ',nvthanhtoan as 'Nhân viên thanh toán' from HoaDon";
-            SqlDataAdapter sqldatasp = new SqlDataAdapter(querysp, connect);
-            DataTable datatbsp = new DataTable();
-            sqldatasp.Fill(datatbsp);
-            dataGridView1.DataSource = datatbsp;
+            string querySP = @"select IDhoadon as 'Mã hóa đơn',HDmasp as 'Mã sản phẩm' , HDtensp as 'Tên sản phẩm', TenKH as 'Tên KH', HDsl as 'Số lượng',HDdongia as 'Đơn giá' ,HDthanhtoan as 'Thanh toán',HDtime as 'Thời gian', HDloai as 'Loại', HDdonvi as 'Đơn vị',SDT as 'SĐT',HDno as 'Nợ',nvthanhtoan as 'Nhân viên thanh toán' from HoaDon";
+            SqlDataAdapter sqldatasp = new SqlDataAdapter(querySP, connect);
+            DataTable dataTBSP = new DataTable();
+            sqldatasp.Fill(dataTBSP);
+            dataGridView1.DataSource = dataTBSP;
             connect.Close();
         }
 
@@ -49,19 +49,19 @@ namespace DoAn_2.MenuTab
         {
             if (dataGridView1.CurrentRow.Index != -1)
             {
-                hdid = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                hdmasp = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                hdtensp = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                hdsl = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                hddongia = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                hdloai = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                hddonvi = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-                hdthanhtoan = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                sdt = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                tenkh = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                hdtime = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                hdno = dataGridView1.CurrentRow.Cells[11].Value.ToString();
-                nvtt = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+                hdID = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                hdMaSP = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                hdTenSP = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                hdSL = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                hdDonGia = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                hdLoai = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                hdDonVi = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                hdThanhToan = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                sDT = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                tenKH = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                hdTime = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                hdNo = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+                nvTT = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
                 var form2 = new HoaDonChiTiet();
                 form2.Show();
@@ -145,7 +145,7 @@ namespace DoAn_2.MenuTab
 
         private void ButtonReloadTable_Click(object sender, EventArgs e)
         {
-            gridviewsp();
+            GridViewSP();
         }
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -153,28 +153,28 @@ namespace DoAn_2.MenuTab
             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
-            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Workbook workBook = app.Workbooks.Add(Type.Missing);
             // creating new Excelsheet in workbook  
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            Microsoft.Office.Interop.Excel._Worksheet workSheet = null;
             // see the excel sheet behind the program  
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
+            workSheet = workBook.Sheets["Sheet1"];
+            workSheet = workBook.ActiveSheet;
             // changing the name of active sheet  
-            worksheet.Name = "Exported from gridview";
+            workSheet.Name = "Exported from gridview";
             // storing header part in Excel  
             for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
             {
-                worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                workSheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
             }
             // storing Each row and column value to excel sheet  
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {
-                    worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    workSheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
             }
             // save the application  

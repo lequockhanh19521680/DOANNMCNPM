@@ -55,19 +55,19 @@ namespace DoAn_2.MenuTab
 
         private void HoaDonChiTiet_Load(object sender, EventArgs e)
         {
-            string StringID = DonHang.hdid;
-            string StringMasp = DonHang.hdmasp;
-            string StringHDtensp = DonHang.hdtensp;
-            string StringHDsl = DonHang.hdsl;
-            string StringHDdongia = DonHang.hddongia;
-            string StringHDloai = DonHang.hdloai;
-            string StringHDdonvi = DonHang.hddonvi;
-            string StringHDthanhtoan = DonHang.hdthanhtoan;
-            string StringHDsdt = DonHang.sdt;
-            string StringHDtenKH = DonHang.tenkh;
-            string StringHDtime = DonHang.hdtime;
-            string StringHDno = DonHang.hdno;
-            string StringHDnvtt = DonHang.nvtt;
+            string StringID = DonHang.hdID;
+            string StringMasp = DonHang.hdMaSP;
+            string StringHDtensp = DonHang.hdTenSP;
+            string StringHDsl = DonHang.hdSL;
+            string StringHDdongia = DonHang.hdDonGia;
+            string StringHDloai = DonHang.hdLoai;
+            string StringHDdonvi = DonHang.hdDonVi;
+            string StringHDthanhtoan = DonHang.hdThanhToan;
+            string StringHDsdt = DonHang.sDT;
+            string StringHDtenKH = DonHang.tenKH;
+            string StringHDtime = DonHang.hdTime;
+            string StringHDno = DonHang.hdNo;
+            string StringHDnvtt = DonHang.nvTT;
 
             string[] item0 = StringID.Split(',');
             string[] item1 = StringMasp.Split(',');
