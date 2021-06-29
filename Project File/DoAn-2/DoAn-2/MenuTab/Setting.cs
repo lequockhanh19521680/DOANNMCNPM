@@ -17,17 +17,18 @@ namespace DoAn_2.MenuTab
         SqlConnection connect = ClassKetnoi.connect;
         // SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-A0E9NLI\MSSQLSERVER2019;Initial Catalog=doan-3;Integrated Security=True");
         SqlDataAdapter adap;
-        DataSet dskh;
-        Label IDtt = new Label();
-        string imglogoloc = "";
+        DataSet danhSachKhacHang;
+        Label idThongTin = new Label();
+        string imgLogoLoc = "";
+
         public Setting()
         {
             if(MainControl.tennv=="Admin")
             {
                 //MessageBox.Show("ban la nhan vien");
                 InitializeComponent();
-                gridviewNhanVien();
-                gridviewKhachHang();
+                GridviewNhanVien();
+                GridviewKhachHang();
             }
             else
             {
@@ -36,7 +37,8 @@ namespace DoAn_2.MenuTab
             }
 
         }
-        public void gridviewNhanVien()
+
+        public void GridviewNhanVien()
         {
             //data grid view nhan vien
             string querynv = @"select STT as 'STT', usernv as 'Tên tài khoản', tennv as 'Tên nhân viên', passnv as 'Mật khẩu' from nhanvien";
@@ -47,7 +49,7 @@ namespace DoAn_2.MenuTab
             connect.Close();
 
         }
-        private void gridviewKhachHang()
+        private void GridviewKhachHang()
         {
             //datagridview thong tin khach hang
 
@@ -55,9 +57,9 @@ namespace DoAn_2.MenuTab
             {
                 connect.Open();
                 adap = new SqlDataAdapter("select IDkh as 'ID', TenKH as 'Tên khách hàng', SDT as 'SĐT', DiaChi as 'Địa chỉ',Email as 'Email' from KhachHang",connect);
-                dskh = new System.Data.DataSet();
-                adap.Fill(dskh, "KhachHangTable");
-                dataGridViewKH.DataSource = dskh.Tables[0];
+                danhSachKhacHang = new System.Data.DataSet();
+                adap.Fill(danhSachKhacHang, "KhachHangTable");
+                dataGridViewKH.DataSource = danhSachKhacHang.Tables[0];
                 //string querykh = @"select IDkh as 'ID', TenKH as 'Tên khách hàng', SDT as 'SĐT', DiaChi as 'Địa chỉ',Email as 'Email' from KhachHang";
                 //SqlDataAdapter sqldatakh = new SqlDataAdapter(querykh, connect);
                 //DataTable datatbkh = new DataTable();
@@ -73,7 +75,7 @@ namespace DoAn_2.MenuTab
 
         }
 
-        public void clearnv()
+        public void ClearNV()
         {
             txtUserNV.Clear();
             txtNameNV.Clear();
@@ -110,8 +112,8 @@ namespace DoAn_2.MenuTab
                     {
                         MessageBox.Show("Đã thêm");
                         connect.Close();
-                        clearnv();
-                        gridviewNhanVien();
+                        ClearNV();
+                        GridviewNhanVien();
 
                     }
                     else
@@ -157,8 +159,8 @@ namespace DoAn_2.MenuTab
                         {
                             MessageBox.Show("Đã lựu");
                             connect.Close();
-                            clearnv();
-                            gridviewNhanVien();
+                            ClearNV();
+                            GridviewNhanVien();
                         }
                         else
                         {
@@ -194,8 +196,8 @@ namespace DoAn_2.MenuTab
                         {
                             MessageBox.Show("Đã xóa");
                             connect.Close();
-                            clearnv();
-                            gridviewNhanVien();
+                            ClearNV();
+                            GridviewNhanVien();
                         }
                         else
                         {
@@ -215,30 +217,26 @@ namespace DoAn_2.MenuTab
 
         private void BtnHuy_Click(object sender, EventArgs e)
         {
-            clearnv();
+            ClearNV();
 
         }
-        SqlCommand cmd = new SqlCommand();
-
-        SqlDataReader rdr;
-      //  DataSet ds;
-        SqlDataAdapter da;
+             
         private void Setting_Load(object sender, EventArgs e)
         {
             try
             {
                 connect.Close();
                 connect.Open();
-                string sqlquery = "select ID,TenShop,Diachi,SDT,Loichao from ThongTinShop";
-                SqlCommand command = new SqlCommand(sqlquery, connect);
-                SqlDataReader sdr = command.ExecuteReader();
-                while (sdr.Read())
+                string sqlQuery = "select ID,TenShop,Diachi,SDT,Loichao from ThongTinShop";
+                SqlCommand command = new SqlCommand(sqlQuery, connect);
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                while (sqlDataReader.Read())
                 {
-                    IDtt.Text = sdr["ID"].ToString();
-                    txtTenShop.Text = sdr["TenShop"].ToString();
-                    txtSDT.Text = sdr["SDT"].ToString();
-                    txtDiaChi.Text = sdr["Diachi"].ToString();
-                    txtLoiChao.Text = sdr["Loichao"].ToString();
+                    idThongTin.Text = sqlDataReader["ID"].ToString();
+                    txtTenShop.Text = sqlDataReader["TenShop"].ToString();
+                    txtSDT.Text = sqlDataReader["SDT"].ToString();
+                    txtDiaChi.Text = sqlDataReader["Diachi"].ToString();
+                    txtLoiChao.Text = sqlDataReader["Loichao"].ToString();
                 }
                 connect.Close();
             }
@@ -251,10 +249,12 @@ namespace DoAn_2.MenuTab
             try
             {
                 SqlCommand command;
-                string sqllogo = "select logo from ThongTinShop where ID=1 ";
-                if (connect.State != ConnectionState.Open)
+                string sqlLogo = "select logo from ThongTinShop where ID=1 ";
+                if (connect.State 
+                    != ConnectionState.Open)
                     connect.Open();
-                command = new SqlCommand(sqllogo, connect);
+
+                command = new SqlCommand(sqlLogo, connect); 
                 SqlDataReader reader = command.ExecuteReader();
 
                 reader.Read();
@@ -267,8 +267,8 @@ namespace DoAn_2.MenuTab
                     }
                     else
                     {
-                        MemoryStream ms = new MemoryStream(img);
-                        pictureBox1.Image = Image.FromStream(ms);
+                        MemoryStream memoryStream = new MemoryStream(img);
+                        pictureBox1.Image = Image.FromStream(memoryStream);
 
                     }
                     //  MessageBox.Show(img.ToString());
@@ -277,14 +277,14 @@ namespace DoAn_2.MenuTab
                 else
                 {
                     connect.Close();
-                    MessageBox.Show("bi loi");
+                    MessageBox.Show("Bị lỗi");
                 }
 
             }
             catch (Exception ex)
             {
                 connect.Close();
-                MessageBox.Show("loi logo: " + ex.Message);
+                MessageBox.Show("Lỗi Logo: " + ex.Message);
             }
 
         }
@@ -361,11 +361,11 @@ namespace DoAn_2.MenuTab
         {
             try
             {
-                OpenFileDialog dlg = new OpenFileDialog();
-                if (dlg.ShowDialog() == DialogResult.OK)
+                OpenFileDialog diaLog = new OpenFileDialog();
+                if (diaLog.ShowDialog() == DialogResult.OK)
                 {
-                    imglogoloc = dlg.FileName.ToString();
-                    pictureBox1.ImageLocation = imglogoloc;
+                    imgLogoLoc = diaLog.FileName.ToString();
+                    pictureBox1.ImageLocation = imgLogoLoc;
                 }
             }
             catch (Exception ex)
@@ -380,9 +380,9 @@ namespace DoAn_2.MenuTab
             try
             {
                 byte[] img = null;
-                FileStream fs = new FileStream(imglogoloc, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fs);
-                img = br.ReadBytes((int)fs.Length);
+                FileStream fileStream = new FileStream(imgLogoLoc, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader(fileStream);
+                img = binaryReader.ReadBytes((int)fileStream.Length);
                 using (var cmd = new SqlCommand("update ThongTinShop set logo=@logo where ID=1"))
                 {
                     cmd.Connection = connect;
@@ -405,15 +405,16 @@ namespace DoAn_2.MenuTab
                 MessageBox.Show(ex.Message);
             }
         }
-        SqlCommandBuilder cmdbuilder;
+
+        SqlCommandBuilder cmdBuilder;
         private void btnUpdateKH_Click(object sender, EventArgs e)
         {
             
             try
             {
-                cmdbuilder = new SqlCommandBuilder();
+                cmdBuilder = new SqlCommandBuilder();
                 adap.UpdateCommand = new SqlCommandBuilder(adap).GetUpdateCommand();
-                adap.Update(dskh, "KhachHangTable");
+                adap.Update(danhSachKhacHang, "KhachHangTable");
                 MessageBox.Show("Cập nhật thành công!");
             }
             catch (Exception ex)
