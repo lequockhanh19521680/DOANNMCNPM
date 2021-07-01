@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +21,7 @@ namespace DoAn_2.MenuTab
         string imgloc = "";
         
         SqlCommand command;
-        public void gridviewsp()
+        public void GridViewSp()
         {
             string querysp = @"select masp as 'Mã sản phẩm', tensp as 'Tên sản phẩm', soluongsp as 'Số lượng', gianhapsp as 'Giá nhập', giabansp as 'Giá bán', loaisp as 'Loại', donvisp as 'Đơn vị', ngaynhapkho as 'Ngày nhập kho', nvnhapkho as 'Nhân viên' from nhapkho";
             SqlDataAdapter sqldatasp = new SqlDataAdapter(querysp, connect);
@@ -31,7 +31,7 @@ namespace DoAn_2.MenuTab
             connect.Close();
         }
 
-        public void clearsp()
+        public void ClearSp()
         {
             txtid.Clear();
             txttensp.Clear();
@@ -45,7 +45,7 @@ namespace DoAn_2.MenuTab
         }
 
 
-        private void autoid()
+        private void AutoId()
         {
             if (comboloai.SelectedIndex == -1)
             {
@@ -136,8 +136,7 @@ namespace DoAn_2.MenuTab
             InitializeComponent();
             
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gridviewsp();
-
+            GridViewSp();
            // string querysp = @"select masp as 'Mã sản phẩm', tensp as 'Tên sản phẩm', soluongsp as 'Số lượng', gianhapsp as 'Giá nhập', giabansp as 'Giá bán', loaisp as 'Loại', donvisp as 'Đơn vị'from sanpham;";
             string queryloai = @"select * from loaisp";
             string querydonvi = @"select * from donvisp";
@@ -179,7 +178,7 @@ namespace DoAn_2.MenuTab
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtid.Text))
             {
@@ -246,9 +245,8 @@ namespace DoAn_2.MenuTab
                         {
                             MessageBox.Show("Đã thêm");
                             connect.Close();
-                           // clearsp();
-                            gridviewsp();
-                            
+                            // clearsp();
+                            GridViewSp();
                         }
                         else
                         {
@@ -290,7 +288,7 @@ namespace DoAn_2.MenuTab
                                     connect.Close();
                                     //  MessageBox.Show("Đã thêm");
                                     //  gridviewsp();
-                                      clearsp();
+                                    ClearSp();
                                 }
                                 else
                                 {
@@ -325,7 +323,7 @@ namespace DoAn_2.MenuTab
                                     connect.Close();
                                     //MessageBox.Show("Đã thêm");
                                     //gridviewsp();
-                                    clearsp();
+                                    ClearSp();
                                 }
                                 else
                                 {
@@ -355,8 +353,8 @@ namespace DoAn_2.MenuTab
         {
             if(dataGridView1.CurrentRow.Index!=-1)
             {
-                clearsp();
-                
+                ClearSp();
+
                 txtid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txttensp.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtsl.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -409,7 +407,7 @@ namespace DoAn_2.MenuTab
             }
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+        private void btnSave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtid.Text))
             {
@@ -441,7 +439,7 @@ namespace DoAn_2.MenuTab
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Đã lựu");
-                        gridviewsp();
+                        GridViewSp();
                         txtid.ReadOnly = true;
                     }
                     else
@@ -460,7 +458,7 @@ namespace DoAn_2.MenuTab
             }
         }
 
-        private void btndelete_Click(object sender, EventArgs e)
+        private void btnDelete(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtid.Text))
             {
@@ -480,8 +478,8 @@ namespace DoAn_2.MenuTab
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Đã xóa");
-                        clearsp();
-                        gridviewsp();
+                        ClearSp();
+                        GridViewSp();                    
                     }
                     else
                     {
@@ -499,9 +497,9 @@ namespace DoAn_2.MenuTab
             }
         }
 
-        private void btnclear_Click(object sender, EventArgs e)
+        private void btnClear(object sender, EventArgs e)
         {
-            clearsp();
+            ClearSp();
         }
 
         private void btnButtonChooseIMG_Click(object sender, EventArgs e)
@@ -534,8 +532,8 @@ namespace DoAn_2.MenuTab
                     if (cmd.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Đã xóa");
-                        clearsp();
-                        gridviewsp();
+                        ClearSp();
+                        GridViewSp();                    
                     }
                     else
                     {
@@ -551,7 +549,7 @@ namespace DoAn_2.MenuTab
             }
         }
 
-        private void txtsearch_TextChanged(object sender, EventArgs e)
+        private void TxtsearchTextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -596,11 +594,11 @@ namespace DoAn_2.MenuTab
 
 
 
-        private void comboloai_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboSelectedIndexChangedLoai(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtid.Text))
             {
-                autoid();
+                AutoId();
                 txtid.ReadOnly = false;
             }
             else
@@ -681,6 +679,26 @@ namespace DoAn_2.MenuTab
                 connect.Close();
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cboSelectedIndexChangedDonVi(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
