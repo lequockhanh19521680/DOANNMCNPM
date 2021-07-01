@@ -1,4 +1,4 @@
-﻿namespace DoAn_2.MenuTab
+namespace DoAn_2.MenuTab
 {
     partial class ChartMoney
     {
@@ -31,43 +31,43 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.ChartRead = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRead)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChartRead.ChartAreas.Add(chartArea1);
+            this.ChartRead.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
+            this.ChartRead.Legends.Add(legend1);
+            this.ChartRead.Location = new System.Drawing.Point(0, 0);
+            this.ChartRead.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(682, 208);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.ChartRead.Series.Add(series1);
+            this.ChartRead.Size = new System.Drawing.Size(682, 208);
+            this.ChartRead.TabIndex = 0;
+            this.ChartRead.Text = "chart1";
             // 
             // ChartMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 208);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.ChartRead);
             this.Name = "ChartMoney";
             this.Text = "ChartMoney";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRead)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartRead;
     }
 }
